@@ -7,6 +7,7 @@ import router from './router'
 import ElementUI from "element-ui"
 // 导入样式
 import "element-ui/lib/theme-chalk/index.css"
+import qs from "qs"
 
 // 全局注册element
 Vue.use(ElementUI)
@@ -15,14 +16,15 @@ Vue.use(ElementUI)
 import axios from "axios"
 // 将axios注入到vue的中
 Vue.prototype.$axios = axios;
+Vue.prototype.$qs = qs
 
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: {App},
+    template: '<App/>'
 })

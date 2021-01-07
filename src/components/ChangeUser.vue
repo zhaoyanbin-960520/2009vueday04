@@ -42,22 +42,11 @@ export default {
         };
     },
     methods: {
-        updata_page(){
-            let id = this.$route.params.id;
-            this.$axios({
-                url: "http://127.0.0.1:8000/userapp/updatapage/",
-                method: 'get',
-                params: {'id': id},
-            }).then(res => {
-                this.user=res.data
 
-            })
 
         },
-    },
-    created() {
-        this.updata_page()
-    },
+
+
 
 }
 </script>

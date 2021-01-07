@@ -43,7 +43,8 @@ export default {
       })
     },
     change_page(row){
-      this.$router.push("/change/"+row)
+        console.log(row)
+      this.$router.push("/change/?id="+row)
     },
 
     add_user(){
@@ -64,9 +65,9 @@ export default {
       //请求方式
       method: "get",
     }).then(response => {
-      // 请求成功后可以走到这个回调函数
-      //console.log(response.data)
-      this.user_list = response.data
+      // 请求成功后可以走到这个回调函
+        //console.log(response.data.result)
+        this.user_list =response.data.result
     })
   },
 }

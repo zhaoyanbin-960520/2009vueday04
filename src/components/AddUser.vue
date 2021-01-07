@@ -47,15 +47,16 @@ export default {
     methods:{
       add_user(){
           this.$axios({
-              url:"http://127.0.0.1:8000/userapp/adduser/",
-              method:'get',
-              params:{
+              url:"http://127.0.0.1:8000/userapp/getall/",
+              method:'post',
+              data:this.$qs.stringify({
                   name:this.user.name,
                   pwd:this.user.pwd,
                   age:this.user.bir,
                   salary:this.user.salary,
                   address:this.user.address,
-              }
+              }),
+              headers:{"Content-Type":'application/x-www-form-urlencoded;charset=UTF-8'}
           }).then(res=>{
               if (res.data){
                   this.$router.go(-1)
